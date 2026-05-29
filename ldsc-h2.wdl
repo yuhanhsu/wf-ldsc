@@ -45,7 +45,7 @@ workflow main {
 
 	output {
 		# bucket link to output
-		String output_h2 = run_ldsc_h2.output_link
+		String output_h2 = run_ldsc_h2.out_link
 	}
 }
 
