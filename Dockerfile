@@ -23,8 +23,6 @@ RUN apt-get update && apt-get install -y \
 
 # clone ldsc repo (ldsc39 branch for python 3.9+)
 RUN git clone -b ldsc39 https://github.com/CBIIT/ldsc.git
-
-# set working directory (contains executable ldsc python scripts)
 WORKDIR /ldsc
 
 # create conda environment with dependencies
@@ -39,6 +37,7 @@ RUN conda activate ldsc \
 	&& ./make_annot.py -h \
 	&& ./ldsc.py -h
 
-# add conda environment to system PATH
-ENV PATH="/opt/conda/envs/ldsc/bin:$PATH"
+# cromwell overides startup script that can activate conda environment
+# so use absolute path in ldsc env when calling python in WDL:
+# /opt/miniconda3/envs/ldsc/bin/python
 
