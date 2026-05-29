@@ -41,5 +41,8 @@ RUN conda activate ldsc \
 
 # activate conda environment when starting container
 RUN echo "source activate ldsc" > ~/.bashrc
-ENV PATH /opt/conda/envs/ldsc/bin:$PATH
+ENV PATH="/opt/conda/envs/ldsc/bin:${PATH}"
+
+# add /ldsc to system PATH
+ENV PATH="/ldsc:${PATH}"
 
