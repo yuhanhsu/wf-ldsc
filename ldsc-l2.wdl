@@ -73,7 +73,7 @@ task run_ldsc_l2 {
 		./make_annot.py \
 		--gene-set-file "~{gene_set_file}" \
 		--gene-coord-file "~{gene_coord_file}" \
-		--windowsize "~{window_size}" \
+		--windowsize ~{window_size} \
 		--bimfile "${plink_name}/~{plink_prefix}.~{chr}.bim" \
 		--annot-file "~{out_dir}/~{gene_set}/~{gene_set}.~{chr}.annot.gz"
 
@@ -81,11 +81,11 @@ task run_ldsc_l2 {
 		./ldsc.py \
 		--l2 \
 		--bfile "${plink_name}/~{plink_prefix}.~{chr}" \
-		--ld-wind-cm "~{ld_wind_cm}" \
+		--ld-wind-cm ~{ld_wind_cm} \
 		--annot "~{out_dir}/~{gene_set}/~{gene_set}.~{chr}.annot.gz" \
 		--thin-annot \
 		--out "~{out_dir}/~{gene_set}/~{gene_set}.~{chr}" \
-		--print-snps "~{snp_file}
+		--print-snps "~{snp_file}"
 
 		echo "### copy output files to destination bucket"
 		gcloud storage cp -r "~{out_dir}" "~{destination}"
