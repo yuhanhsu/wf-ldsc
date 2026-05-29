@@ -49,14 +49,14 @@ task run_ldsc_l2 {
 		String destination
 		String out_dir
 		String gene_set
-                File gene_set_file
-                File gene_coord_file
-                Int window_size
-                String plink_folder
-                String plink_prefix
-                Int chr
+		File gene_set_file
+		File gene_coord_file
+		Int window_size
+		String plink_folder
+		String plink_prefix
+		Int chr
 		Int ld_wind_cm
-                File snp_file
+		File snp_file
 	}
 
 	command <<<
