@@ -93,7 +93,7 @@ task run_ldsc_h2 {
 		mkdir -p "~{out_dir}/~{gene_set}"
 		
 		echo "### partition heritability (ldsc.py --h2)"
-		python /ldsc/ldsc.py \
+		python ldsc.py \
 		--h2 "~{trait_file}" \
 		--ref-ld-chr "${ref_ld_chr_str}" \ 
 		--w-ld-chr "${weights_name}/~{weights_prefix}." \ 

@@ -43,3 +43,6 @@ RUN conda activate ldsc \
 RUN echo "source activate ldsc" > ~/.bashrc
 ENV PATH="/opt/conda/envs/ldsc/bin:${PATH}"
 
+# add /ldsc to system PATH (so can run ldsc scripts from anywhere)
+ENV PATH="/ldsc:${PATH}"
+

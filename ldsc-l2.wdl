@@ -70,7 +70,7 @@ task run_ldsc_l2 {
 		mkdir -p "~{out_dir}/~{gene_set}"
 		
 		echo "### make annotation (make_annot.py)"
-		python /ldsc/make_annot.py \
+		python make_annot.py \
 		--gene-set-file "~{gene_set_file}" \
 		--gene-coord-file "~{gene_coord_file}" \
 		--windowsize ~{window_size} \
@@ -78,7 +78,7 @@ task run_ldsc_l2 {
 		--annot-file "~{out_dir}/~{gene_set}/~{gene_set}.~{chr}.annot.gz"
 
 		echo "### compute LD scores (ldsc.py --l2)"
-		python /ldsc/ldsc.py \
+		python ldsc.py \
 		--l2 \
 		--bfile "${plink_name}/~{plink_prefix}.~{chr}" \
 		--ld-wind-cm ~{ld_wind_cm} \
