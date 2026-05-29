@@ -39,7 +39,7 @@ workflow main {
 
 	output {
 		# bucket link to output
-		String output_l2 = run_ldsc_l2.out_link
+		String output_l2 = select_first(run_ldsc_l2.out_link)
 	}
 }
 
