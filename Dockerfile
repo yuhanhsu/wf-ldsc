@@ -39,10 +39,6 @@ RUN conda activate ldsc \
 	&& ./make_annot.py -h \
 	&& ./ldsc.py -h
 
-# activate conda environment when starting container
-RUN echo "source activate ldsc" > ~/.bashrc
-ENV PATH="/opt/conda/envs/ldsc/bin:${PATH}"
-
-# add /ldsc to system PATH (so can run ldsc scripts from anywhere)
-ENV PATH="/ldsc:${PATH}"
+# add conda environment to system PATH
+ENV PATH="/opt/conda/envs/ldsc/bin:$PATH"
 
