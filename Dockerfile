@@ -10,6 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # install git and gcloud CLI
 RUN apt-get update && apt-get install -y \
 	git \
+	bedtools \
 	curl \
 	ca-certificates \
 	gnupg \
