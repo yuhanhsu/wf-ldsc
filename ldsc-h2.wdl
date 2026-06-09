@@ -40,7 +40,8 @@ workflow main {
 			background_prefix = background_prefix,
 			weights_folder = weights_folder,
 			weights_prefix = weights_prefix,
-                	freq_folder = freq_folder
+            freq_folder = freq_folder,
+            freq_prefix
 	}
 
 	output {
