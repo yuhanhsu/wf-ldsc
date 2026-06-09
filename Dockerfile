@@ -22,8 +22,10 @@ RUN apt-get update && apt-get install -y \
 	&& find /usr/lib/google-cloud-sdk -name "*__pycache__*" -delete \
 	&& rm -rf /var/lib/apt/lists/*
 
-# clone ldsc repo (ldsc39 branch for python 3.9+)
-RUN git clone -b ldsc39 https://github.com/CBIIT/ldsc.git
+# clone python3 ldsc repo
+#RUN git clone -b ldsc39 https://github.com/CBIIT/ldsc.git
+# forked repo with bug fix in ldscore/parse.py 
+RUN git clone https://github.com/yuhanhsu/ldsc.git
 WORKDIR /ldsc
 
 # create conda environment with dependencies
