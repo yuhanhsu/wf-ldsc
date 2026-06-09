@@ -103,9 +103,10 @@ task run_ldsc_h2 {
 		mkdir -p "~{out_dir}/~{gene_set}"
 		
 		echo "### partition heritability (ldsc.py --h2)"
-		/opt/miniconda3/envs/ldsc/bin/python /ldsc/ldsc.py --h2 "~{trait_file}" \
-		--ref-ld-chr "${ref_ld_chr_str}" \ 
-		--w-ld-chr "${weights_name}/~{weights_prefix}." \ 
+		/opt/miniconda3/envs/ldsc/bin/python /ldsc/ldsc.py \
+		--h2 "~{trait_file}" \
+		--ref-ld-chr "${ref_ld_chr_str}" \
+		--w-ld-chr "${weights_name}/~{weights_prefix}." \
 		--frqfile-chr "${freq_name}/~{freq_prefix}." \
 		--overlap-annot \
 		--print-coefficients \
