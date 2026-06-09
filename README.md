@@ -12,5 +12,5 @@
 - Cloud Build: a few minutes
 - Dockstore: a few minutes
 - *ldsc-l2* workflow on Terra: depends on data size, <30 min for gene set with ~8k genes
-- *ldsc-h2* workflow on Terra: depends on data size, XXX
+- *ldsc-h2* workflow on Terra: depends on data size, ~15 min for baselineLD + 2 annotations
 

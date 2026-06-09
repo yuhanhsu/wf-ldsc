@@ -27,8 +27,8 @@ RUN apt-get update && apt-get install -y \
 #RUN git clone -b ldsc39 https://github.com/CBIIT/ldsc.git
 # forked repo with bug fix in ldscore/parse.py 
 #RUN git clone -b ldsc39 https://github.com/yuhanhsu/ldsc.git
-# ldsc313 branch = python 3.13
-RUN git clone -b ldsc313 https://github.com/yuhanhsu/ldsc.git
+# ldsc312 branch = python 3.12
+RUN git clone -b ldsc312 https://github.com/yuhanhsu/ldsc.git
 WORKDIR /ldsc
 
 # create conda environment with dependencies
