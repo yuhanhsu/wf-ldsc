@@ -77,18 +77,27 @@ task run_ldsc_h2 {
 		baseline_name=$(echo "~{baseline_folder}" | awk -F '/' '{print $NF}')
 		weights_name=$(echo "~{weights_folder}" | awk -F '/' '{print $NF}')
 		freq_name=$(echo "~{freq_folder}" | awk -F '/' '{print $NF}')
-	
+		
+		echo "baseline folder: ${baseline_name}"
+		echo "weights folder: ${weights_name}"
+		echo "freq folder: ${freq_name}"
+		
 		# set up alternative ldsc input params if optional background is defined
 		if [ -n "~{background_folder}" ]; then
 			gcloud storage cp -r "~{background_folder}" .
 			background_name=$(echo "~{background_folder}" | awk -F '/' '{print $NF}')
-			
+		
+			echo "background folder: ${background_name}"
+	
 			ref_ld_chr_str="${baseline_name}/~{baseline_prefix}.,${background_name}/~{background_prefix}.,~{gene_set}/~{gene_set}."
 			out_str="~{out_dir}/~{gene_set}/~{trait}.~{baseline_prefix}.~{background_prefix}.~{gene_set}"
 		else
 			ref_ld_chr_str="${baseline_name}/~{baseline_prefix}.,~{gene_set}/~{gene_set}."
 			out_str="~{out_dir}/~{gene_set}/~{trait}.~{baseline_prefix}.~{gene_set}"
 		fi
+
+		echo "ref-ld-chr string: ${ref_ld_chr_str}"
+		echo "output string: ${out_str}"
 		
 		# create output directory
 		mkdir -p "~{out_dir}/~{gene_set}"
