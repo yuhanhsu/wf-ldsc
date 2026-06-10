@@ -28,5 +28,5 @@ substitutions:
   _LOCATION: us-central1
   _REPOSITORY: genoppi
   _IMAGE_NAME: ldsc
-  _IMAGE_TAG: 2026.06.09.py312
+  _IMAGE_TAG: 2026.06.09
 
